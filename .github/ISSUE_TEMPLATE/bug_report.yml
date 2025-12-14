@@ -1,0 +1,43 @@
+name: Отчет о дефекте
+description: Шаблон для отчетов о найденных ошибках
+title: "[Ошибка]: "
+labels: ["bug"]
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      description: Подробно опишите обнаруженную ошибку, включая шаги для воспроизведения.
+      placeholder: Укажите подробности ошибки
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Серьезность
+      description: Укажите уровень серьезности ошибки.
+      options:
+        - Низкая
+        - Средняя
+        - Высокая
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        Пожалуйста, добавьте дополнительные комментарии, если необходимо.
+
+  - type: checkboxes
+    id: reproducibility
+    attributes:
+      label: Степень воспроизводимости
+      description: Укажите, как часто ошибка воспроизводится.
+      options:
+        - label: Никогда
+        - label: Иногда
+        - label: Часто
+    validations:
+      required: true
